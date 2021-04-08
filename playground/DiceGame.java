@@ -7,16 +7,26 @@ public class DiceGame {
 	
 	public DiceGame(int diceNumber) {
 		diceArray = new Dice[diceNumber];
+		for(int i=0;i<diceNumber;i++) {
+			diceArray[i] = new Dice(6);
+		}
 	}
 	
 	public int playGames() {
 		int totalScore=0;
 		while(isAnyDiceLeft()) {
-			totalScore +=throwDice();
+			int value =throwDice();
+			totalScore =totalScore+ value;
 		}
 		
 		return totalScore;
 		
+	}
+	
+	public void resetGame() {
+		for(Dice dice:diceArray) {
+			dice.setValue(0);
+		}
 	}
 	
 	private boolean isAnyDiceLeft() {
