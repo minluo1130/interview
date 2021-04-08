@@ -14,6 +14,7 @@ public class InterView {
 		while(index<playTimes) {
 			int score =diceGame.playGames();
 			playScores.put(score,playScores.getOrDefault(score,0)+1);
+			index++;
 		}
 		
 		for(Map.Entry<Integer, Integer> score:playScores.entrySet()) {

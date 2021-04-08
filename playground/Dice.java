@@ -4,15 +4,16 @@ import java.util.Random;
 
 public class Dice {
 	private int value;
+	private Random random;
 	static private int MAX_VALUE;
-	
+
 	public Dice(int maxValue) {
 		value =0;
 		MAX_VALUE =maxValue;
+		random =new Random();
 	}
 	
 	public int getRandomValue() {
-		Random random= new Random();
 		this.value =random.nextInt(MAX_VALUE) +1;
 		return value;
 	}
